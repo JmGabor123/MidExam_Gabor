@@ -1,0 +1,14 @@
+---
+
+- hosts:
+  tasks:
+    - name: install lamp stack
+      become: yes
+      become_user: root
+      apt:
+        pkg:
+          - php
+          - mariadb
+          - httpd
+        state: present
+        update_cache: yes
